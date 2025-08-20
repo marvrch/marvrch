@@ -82,7 +82,6 @@
   <a href="mailto:marvinchandiary@gmail.com"><img src="https://img.icons8.com/bubbles/50/000000/gmail.png" alt="Gmail"></a>
   <a href="https://github.com/marvrch"><img src="https://img.icons8.com/bubbles/50/000000/github.png" alt="GitHub"></a>
   <a href="https://www.linkedin.com/in/marvinchandiary"><img src="https://img.icons8.com/bubbles/50/000000/linkedin.png" alt="LinkedIn"></a>
-  <a href="https://kaggle.com/marvinchandiary"><img src="https://img.icons8.com/fluency/48/kaggle.png" alt="Kaggle"></a>
   <a href="https://www.hackerrank.com/marvinchandiary"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-logo-color-tal-revivo.png" alt="HackerRank"></a>
 </p>
 <hr>
