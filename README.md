@@ -1,6 +1,6 @@
 <h1 align="center">Hi , I'm Marvin Chandiary <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
 <p align="center">
-  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=Information+Systems+Student;Data+Analytics+%26+BI+Enthusiast;Python+(Pandas+%26+Seaborn);Oracle+%26+SQL+Server;Always+learning+new+things&center=true&width=600&height=50"></a>
+  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=Information+Systems+Student;Data+Analytics+%26+BI+Enthusiast;Always+learning+new+things&center=true&width=600&height=50"></a>
 </p>
 <hr>
 <h4 align="center">I'm an Information Systems student at BINUS University, passionate about turning data into insights. I focus on Data Analytics and Business Intelligence, and I love exploring tools that help make better, data-driven decisions. Outside of class, I build projects, learn new tech, and grow teamwork and leadership through organizational activities. Lifelong learner, always curious.</h4>
