@@ -19,7 +19,7 @@
   <br>
   <p align="center">
     <a href="https://github.com/stats-organization/github-stats-extended"><img alt="Marvin's Github Stats" src="https://github-stats-extended.vercel.app/api?username=marvrch&show_icons=true&count_private=true&title_color=f5a623&text_color=d8dce3&icon_color=5eead4&bg_color=0a0b0e&border_color=2d313b&border_radius=8" height="192px"></a>
-    <br><br><br>
+    <br><br>
     <img src="https://github-stats-extended.vercel.app/api/top-langs?username=marvrch&show_icons=true&locale=en&layout=compact&langs_count=8&title_color=f5a623&text_color=d8dce3&icon_color=5eead4&bg_color=0a0b0e&border_color=2d313b&border_radius=8" alt="Most used languages" height="192px">
     <br>
     <b>Note:</b> Top languages is a metric of the languages in my public repos and doesn't reflect experience or skill level.
