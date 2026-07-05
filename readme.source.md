@@ -34,12 +34,8 @@
   </svg>
   <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '42px 48px 34px 48px' }}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 30 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, border: '1px solid rgba(94,234,212,.55)', background: 'rgba(94,234,212,.08)', borderRadius: 999, padding: '7px 12px' }}>
-        <svg width="10" height="10">
-          <circle id="live-dot" cx="5" cy="5" r="4" fill="#5EEAD4" opacity=".85" />
-          <circle cx="5" cy="5" r="3" fill="#5EEAD4" />
-        </svg>
-        <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 700, fontFamily: 'monospace' }}>PROFILE: LIVE</span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', width: 140, border: '1px solid rgba(94,234,212,.55)', background: 'rgba(94,234,212,.08)', borderRadius: 999, padding: '7px 14px', textAlign: 'left' }}>
+        <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 700, fontFamily: 'monospace', textAlign: 'left' }}>PROFILE: LIVE</span>
       </div>
       <span style={{ color: '#A6ADBB', fontSize: 12, fontFamily: 'monospace', letterSpacing: 1 }}>// GITHUB PROFILE</span>
     </div>
@@ -98,47 +94,76 @@
 ```aura width=860 height=78
 <div style={{ display: 'flex', alignItems: 'center', width: '100%', height: '100%', borderRadius: 12, background: '#0A0B0E', border: '1px solid #2D313B', fontFamily: 'Inter, sans-serif', padding: '0 24px' }}>
   <span style={{ color: '#F5A623', fontSize: 13, fontFamily: 'monospace', letterSpacing: 2.2, marginRight: 14 }}>// 02</span>
-  <span style={{ color: '#F4F4F5', fontSize: 28, fontWeight: 800 }}>🛠️ My Skills</span>
+  <span style={{ color: '#F4F4F5', fontSize: 28, fontWeight: 800 }}>My Skills</span>
   <div style={{ flex: 1, height: 1, background: 'rgba(94,234,212,.28)', marginLeft: 22 }} />
 </div>
 ```
 
-```aura width=860 height=500
-<div style={{ position: 'relative', display: 'flex', width: '100%', height: '100%', background: '#0A0B0E', fontFamily: 'Inter, sans-serif', padding: '8px 8px 8px 34px' }}>
-  <div style={{ position: 'absolute', left: 18, top: 0, bottom: 0, width: 1, background: 'rgba(45,49,59,.85)' }} />
-  <div style={{ position: 'absolute', left: 14, top: 38, width: 9, height: 9, borderRadius: 999, background: '#F5A623' }} />
-  <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', borderRadius: 12, background: '#0D1116', border: '1px solid rgba(245,166,35,.48)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.04)', padding: 20 }}>
-    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 18 }}>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <span style={{ color: '#F4F4F5', fontSize: 20, fontWeight: 800 }}>Core foundations in progress.</span>
-        <span style={{ color: '#A6ADBB', fontSize: 13, marginTop: 9 }}>My Skills</span>
-      </div>
-      <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 800, fontFamily: 'monospace' }}>Fundamentals</span>
-    </div>
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, flex: 1 }}>
+```aura width=860 height=660
+<div style={{ display: 'flex', flexDirection: 'column', gap: 22, width: '100%', height: '100%', background: '#0A0B0E', fontFamily: 'Inter, sans-serif', padding: '8px 8px 8px 34px' }}>
   {[
-    { title: '👉 Programming & Query Fundamentals', summary: 'Readable Python scripts and SQL queries for practical analysis.', items: ['Python', 'SQL'] },
-    { title: '👉 Analysis Foundation', summary: 'Data cleaning, notebooks, and charting for repeatable insight work.', items: ['Pandas', 'Seaborn', 'Jupyter'] },
-    { title: '👉 Database Basics', summary: 'Relational concepts, joins, aggregation, and reporting-ready tables.', items: ['Oracle', 'Microsoft SQL Server'] },
-    { title: '👉 Workflow Tools', summary: 'Version control, coding environment, and practice platforms.', items: ['Git', 'Visual Studio Code', 'Kaggle'] },
-  ].map(function(group, index) {
+    {
+      number: '01',
+      title: 'Foundation / Core Stack',
+      label: 'Core',
+      summary: 'Technical and analytical foundation for practical data work.',
+      blocks: [
+        { title: 'SQL, BigQuery, Python', summary: 'Querying, modeling, scripting, cleaning, and repeatable data preparation.', items: ['SQL', 'BigQuery', 'Python'] },
+        { title: 'Data Analytics Foundation', summary: 'KPI thinking, dashboard interpretation, business questions, and stakeholder-ready reporting.', items: ['BI', 'Dashboards', 'KPI Design'] },
+      ],
+      footer: ['SQL', 'BigQuery', 'Python', 'BI Analytics'],
+    },
+    {
+      number: '02',
+      title: 'Applied BI Experience',
+      label: 'Experience',
+      summary: 'Hands-on reporting and insight work from projects and internship-style business contexts.',
+      blocks: [
+        { title: 'Business Intelligence & Dashboard Building', summary: 'Turning questions into useful views, metrics, and visual reporting flows.', items: ['Dashboards', 'Reporting', 'Metrics'] },
+        { title: 'Business Context & Insight Communication', summary: 'Reading operational data, explaining patterns, and supporting decisions clearly.', items: ['Analysis', 'Storytelling', 'Stakeholders'] },
+      ],
+      footer: ['Dashboarding', 'Reporting', 'KPI Tracking', 'Insight Communication'],
+    },
+  ].map(function(section) {
     return (
-      <div key={group.title} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: 374, height: 166, borderRadius: 10, background: 'rgba(10,11,14,.72)', border: '1px solid rgba(45,49,59,.95)', padding: '15px 16px' }}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <span style={{ color: '#A6ADBB', fontSize: 11, fontFamily: 'monospace', letterSpacing: 1.2 }}>{String(index + 1).padStart(2, '0')}</span>
-          <span style={{ color: '#F4F4F5', fontSize: 16, fontWeight: 800, marginTop: 8 }}>{group.title}</span>
-          <span style={{ color: '#A6ADBB', fontSize: 13, lineHeight: 1.45, marginTop: 9 }}>{group.summary}</span>
-        </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginTop: 14 }}>
-          {group.items.map(function(item) {
-            return <span key={item} style={{ color: '#D8DCE3', background: 'rgba(10,11,14,.6)', border: '1px solid rgba(94,234,212,.23)', borderRadius: 7, padding: '6px 10px', fontSize: 12, fontFamily: 'monospace' }}>{item}</span>;
-          })}
+      <div key={section.number} style={{ position: 'relative', display: 'flex', minHeight: 232, paddingLeft: 26 }}>
+        <div style={{ position: 'absolute', left: 0, top: -8, bottom: -14, width: 1, background: 'rgba(45,49,59,.85)' }} />
+        <div style={{ position: 'absolute', left: -4, top: 36, width: 9, height: 9, borderRadius: 999, background: '#F5A623' }} />
+        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', borderRadius: 12, background: '#0D1116', border: '1px solid rgba(245,166,35,.48)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.04)', padding: 20 }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span style={{ color: '#F4F4F5', fontSize: 19, fontWeight: 800 }}>{section.title}</span>
+              <span style={{ color: '#A6ADBB', fontSize: 13, marginTop: 9 }}>{section.summary}</span>
+            </div>
+            <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 800, fontFamily: 'monospace' }}>{section.label}</span>
+          </div>
+          <div style={{ display: 'flex', gap: 12 }}>
+            {section.blocks.map(function(block, index) {
+              return (
+                <div key={block.title} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: 370, minHeight: 116, borderRadius: 10, background: 'rgba(10,11,14,.72)', border: '1px solid rgba(45,49,59,.95)', padding: '15px 16px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span style={{ color: '#A6ADBB', fontSize: 11, fontFamily: 'monospace', letterSpacing: 1.2 }}>{section.number + String.fromCharCode(65 + index)}</span>
+                    <span style={{ color: '#F4F4F5', fontSize: 15, fontWeight: 800, marginTop: 8 }}>{block.title}</span>
+                    <span style={{ color: '#A6ADBB', fontSize: 13, lineHeight: 1.45, marginTop: 9 }}>{block.summary}</span>
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginTop: 14 }}>
+                    {block.items.map(function(item) {
+                      return <span key={item} style={{ color: '#D8DCE3', background: 'rgba(10,11,14,.6)', border: '1px solid rgba(94,234,212,.23)', borderRadius: 7, padding: '5px 9px', fontSize: 11, fontFamily: 'monospace' }}>{item}</span>;
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div style={{ display: 'flex', gap: 7, marginTop: 14 }}>
+            {section.footer.map(function(item) {
+              return <span key={item} style={{ color: '#A6ADBB', background: 'rgba(10,11,14,.55)', border: '1px solid rgba(45,49,59,.95)', borderRadius: 7, padding: '5px 9px', fontSize: 11, fontFamily: 'monospace' }}>{item}</span>;
+            })}
+          </div>
         </div>
       </div>
     );
   })}
-    </div>
-  </div>
 </div>
 ```
 
@@ -155,8 +180,7 @@
   <br>
   <p align="center">
     <a href="https://github.com/stats-organization/github-stats-extended"><img alt="Marvin's Github Stats" src="https://github-stats-extended.vercel.app/api?username=marvrch&show_icons=true&count_private=true&title_color=f5a623&text_color=d8dce3&icon_color=5eead4&bg_color=0a0b0e&border_color=2d313b&border_radius=8" height="192px"></a>
-    <br>
-    &nbsp;
+    <br><br><br>
     <img src="https://github-stats-extended.vercel.app/api/top-langs?username=marvrch&show_icons=true&locale=en&layout=compact&langs_count=8&title_color=f5a623&text_color=d8dce3&icon_color=5eead4&bg_color=0a0b0e&border_color=2d313b&border_radius=8" alt="Most used languages" height="192px">
     <br>
     <b>Note:</b> Top languages is a metric of the languages in my public repos and doesn't reflect experience or skill level.
