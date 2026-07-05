@@ -32,7 +32,7 @@
     <circle cx="770" cy="66" r="52" fill="none" stroke="rgba(94,234,212,.24)" />
     <circle cx="770" cy="66" r="86" fill="none" stroke="rgba(245,166,35,.16)" />
   </svg>
-  <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', padding: '42px 48px 34px 48px' }}>
+  <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '42px 48px 34px 48px' }}>
     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 30 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, border: '1px solid rgba(94,234,212,.55)', background: 'rgba(94,234,212,.08)', borderRadius: 999, padding: '7px 12px' }}>
         <svg width="10" height="10">
@@ -41,11 +41,11 @@
         </svg>
         <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 700, fontFamily: 'monospace' }}>PROFILE: LIVE</span>
       </div>
-      <span style={{ color: '#A6ADBB', fontSize: 12, fontFamily: 'monospace', letterSpacing: 1 }}>// GITHUB README</span>
+      <span style={{ color: '#A6ADBB', fontSize: 12, fontFamily: 'monospace', letterSpacing: 1 }}>// GITHUB PROFILE</span>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <span style={{ color: '#F4F4F5', fontSize: 54, fontWeight: 800, lineHeight: 1.03, letterSpacing: -.8 }}>Hi , I'm Marvin Chandiary</span>
-      <span style={{ marginTop: 14, color: '#A6ADBB', fontSize: 22, lineHeight: 1.35 }}>Information Systems Student · Data Analytics &amp; BI Enthusiast · Always learning new things</span>
+      <span style={{ color: '#F4F4F5', fontSize: 54, fontWeight: 800, lineHeight: 1.03, letterSpacing: -.8 }}>Hi, I'm Marvin Chandiary</span>
+      <span style={{ marginTop: 14, color: '#A6ADBB', fontSize: 22, lineHeight: 1.35 }}>Information Systems Student · Data Analytics &amp; BI Enthusiast</span>
       <div style={{ display: 'flex', alignItems: 'center', gap: 9, marginTop: 25, border: '1px solid rgba(245,166,35,.28)', background: 'rgba(21,23,29,.72)', borderRadius: 8, padding: '13px 15px', width: 536 }}>
         <span style={{ color: '#F5A623', fontSize: 17, fontFamily: 'monospace' }}>&gt;</span>
         <span style={{ color: '#5EEAD4', fontSize: 14, fontFamily: 'monospace' }}>Always learning new things</span>
@@ -110,17 +110,17 @@
   <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', borderRadius: 12, background: '#0D1116', border: '1px solid rgba(245,166,35,.48)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.04)', padding: 20 }}>
     <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 18 }}>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <span style={{ color: '#F4F4F5', fontSize: 20, fontWeight: 800 }}>The query plan so far.</span>
+        <span style={{ color: '#F4F4F5', fontSize: 20, fontWeight: 800 }}>Core foundations in progress.</span>
         <span style={{ color: '#A6ADBB', fontSize: 13, marginTop: 9 }}>My Skills</span>
       </div>
-      <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 800, fontFamily: 'monospace' }}>Core</span>
+      <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 800, fontFamily: 'monospace' }}>Fundamentals</span>
     </div>
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, flex: 1 }}>
   {[
-    { title: '👉 Programming & Query Languages', summary: 'Querying, scripting, and repeatable data preparation.', items: ['Python', 'SQL'] },
-    { title: '👉 Data Stack', summary: 'Analysis notebooks, dataframes, and visualization workflow.', items: ['Pandas', 'Seaborn', 'Jupyter'] },
-    { title: '👉 Databases', summary: 'Relational database foundations for operational and analytical work.', items: ['Oracle', 'Microsoft SQL Server'] },
-    { title: '👉 Software & Tools', summary: 'Version control, coding workspace, and project practice platforms.', items: ['Git', 'Visual Studio Code', 'Kaggle'] },
+    { title: '👉 Programming & Query Fundamentals', summary: 'Readable Python scripts and SQL queries for practical analysis.', items: ['Python', 'SQL'] },
+    { title: '👉 Analysis Foundation', summary: 'Data cleaning, notebooks, and charting for repeatable insight work.', items: ['Pandas', 'Seaborn', 'Jupyter'] },
+    { title: '👉 Database Basics', summary: 'Relational concepts, joins, aggregation, and reporting-ready tables.', items: ['Oracle', 'Microsoft SQL Server'] },
+    { title: '👉 Workflow Tools', summary: 'Version control, coding environment, and practice platforms.', items: ['Git', 'Visual Studio Code', 'Kaggle'] },
   ].map(function(group, index) {
     return (
       <div key={group.title} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: 374, height: 166, borderRadius: 10, background: 'rgba(10,11,14,.72)', border: '1px solid rgba(45,49,59,.95)', padding: '15px 16px' }}>
@@ -179,27 +179,24 @@
 ```
 
 ```aura width=126 height=44 link="mailto:marvinchandiary@gmail.com" inline align=center
-<SocialMediaButton icon="https://img.icons8.com/bubbles/50/000000/gmail.png" text="Gmail" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={126} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
-```
-```aura width=132 height=44 link="https://github.com/marvrch" inline align=center
-<SocialMediaButton icon="https://img.icons8.com/bubbles/50/000000/github.png" text="GitHub" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={132} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
+<SocialMediaButton icon="https://img.icons8.com/bubbles/50/000000/gmail.png" text="Email" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={126} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
 ```
 ```aura width=144 height=44 link="https://www.linkedin.com/in/marvinchandiary" inline align=center
 <SocialMediaButton icon="https://img.icons8.com/bubbles/50/000000/linkedin.png" text="LinkedIn" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={144} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
 ```
-```aura width=154 height=44 link="https://www.hackerrank.com/marvinchandiary" inline align=center
-<SocialMediaButton icon="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-logo-color-tal-revivo.png" text="HackerRank" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={154} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
+```aura width=132 height=44 link="https://drive.google.com/file/d/1lQHH1OpiArFIfbbTV92y0YXVZJhw-1rv/view?usp=sharing" inline align=center
+<SocialMediaButton icon="https://img.icons8.com/bubbles/50/000000/resume.png" text="Resume" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={132} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
 ```
 
 ---
 
 <ul>
-  <li>Credit: Template parts adapted from <a href="https://github.com/DenverCoder1">DenverCoder1</a> & <a href="https://github.com/anuraghazra">anuraghazra</a></li>
-  <li>Last Edited on: 20/08/2025</li>
+  <li>Credit: Design inspired by <a href="https://github.com/collectioneur/readme-aura">collectioneur/readme-aura</a> and <a href="https://github.com/formidablae/formidablae">formidablae/formidablae</a>; template and stats parts adapted from <a href="https://github.com/DenverCoder1">DenverCoder1</a>, <a href="https://github.com/anuraghazra">anuraghazra</a>, and <a href="https://github.com/stats-organization/github-stats-extended">stats-organization/github-stats-extended</a></li>
+  <li>Last Edited on: 05/07/2026</li>
 </ul>
 
 <!-- Quick blurb for visitors -->
 
 <p align="center">
-  🌱 Currently learning <b>Data Analytics & Data Science</b> • 📫 Reach me at <b>marvinchandiary@gmail.com</b>
+  🌱 Currently learning <b>Data Engineering</b> • 📫 Reach me at <b>marvinchandiary@gmail.com</b>
 </p>
