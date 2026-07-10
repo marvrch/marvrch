@@ -1,226 +1,133 @@
-```aura width=860 height=340
-<div style={{ position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%', height: '100%', overflow: 'hidden', borderRadius: 18, background: '#0A0B0E', border: '1px solid #2D313B', fontFamily: 'Inter, sans-serif' }}>
+```aura width=860 height=300
+<div style={{ position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', height: '100%', overflow: 'hidden', borderRadius: 20, background: '#0B0F14', border: '1px solid #243447', fontFamily: 'Inter, sans-serif', padding: '34px 42px' }}>
   <style>{`
-    @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.42; transform: scale(1.8); } }
-    @keyframes scan { 0% { transform: translateY(-120px); opacity: 0; } 18%, 75% { opacity: .65; } 100% { transform: translateY(360px); opacity: 0; } }
-    #live-dot { animation: pulse-dot 1.8s ease-in-out infinite; transform-origin: center; }
-    #scan-line { animation: scan 6s linear infinite; }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes breathe { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+    #orbit { animation: orbit 24s linear infinite; transform-origin: 742px 151px; }
+    #signal { animation: breathe 2.4s ease-in-out infinite; }
   `}</style>
-  <svg width="860" height="340" style={{ position: 'absolute', inset: 0 }}>
+  <svg width="860" height="300" style={{ position: 'absolute', inset: 0 }}>
     <defs>
-      <radialGradient id="amberGlow" cx="25%" cy="8%" r="65%">
-        <stop offset="0%" stopColor="rgba(245,166,35,0.26)" />
-        <stop offset="100%" stopColor="rgba(245,166,35,0)" />
-      </radialGradient>
-      <radialGradient id="mintGlow" cx="86%" cy="20%" r="54%">
-        <stop offset="0%" stopColor="rgba(94,234,212,0.18)" />
-        <stop offset="100%" stopColor="rgba(94,234,212,0)" />
-      </radialGradient>
-      <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-        <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(45,49,59,.72)" strokeWidth="1" />
+      <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+        <path d="M 42 0 L 0 0 0 42" fill="none" stroke="rgba(36,52,71,.42)" strokeWidth="1" />
       </pattern>
-      <linearGradient id="headline" x1="0" x2="1" y1="0" y2="1">
-        <stop offset="0%" stopColor="#F5A623" />
-        <stop offset="72%" stopColor="#5EEAD4" />
-      </linearGradient>
+      <radialGradient id="cyanGlow" cx="88%" cy="48%" r="52%">
+        <stop offset="0%" stopColor="rgba(34,211,238,.17)" />
+        <stop offset="100%" stopColor="rgba(34,211,238,0)" />
+      </radialGradient>
+      <radialGradient id="amberGlow" cx="5%" cy="0%" r="72%">
+        <stop offset="0%" stopColor="rgba(245,158,11,.13)" />
+        <stop offset="100%" stopColor="rgba(245,158,11,0)" />
+      </radialGradient>
     </defs>
-    <rect width="860" height="340" fill="url(#grid)" opacity=".7" />
-    <rect width="860" height="340" fill="url(#amberGlow)" />
-    <rect width="860" height="340" fill="url(#mintGlow)" />
-    <rect id="scan-line" x="0" y="0" width="860" height="70" fill="rgba(94,234,212,.045)" />
-    <line x1="42" y1="279" x2="818" y2="279" stroke="rgba(94,234,212,.3)" strokeWidth="1" strokeDasharray="8 10" />
-    <circle cx="770" cy="66" r="52" fill="none" stroke="rgba(94,234,212,.24)" />
-    <circle cx="770" cy="66" r="86" fill="none" stroke="rgba(245,166,35,.16)" />
+    <rect width="860" height="300" fill="url(#grid)" />
+    <rect width="860" height="300" fill="url(#cyanGlow)" />
+    <rect width="860" height="300" fill="url(#amberGlow)" />
+    <g id="orbit">
+      <circle cx="742" cy="151" r="82" fill="none" stroke="rgba(34,211,238,.34)" strokeWidth="1" strokeDasharray="4 10" />
+      <circle cx="742" cy="69" r="4" fill="#22D3EE" />
+    </g>
+    <circle cx="742" cy="151" r="53" fill="rgba(11,15,20,.64)" stroke="rgba(245,158,11,.34)" />
+    <path d="M714 164 L731 147 L744 158 L772 130" fill="none" stroke="#22D3EE" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="772" cy="130" r="4" fill="#F59E0B" />
   </svg>
-  <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '42px 48px 34px 48px' }}>
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 30 }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', width: 140, border: '1px solid rgba(94,234,212,.55)', background: 'rgba(94,234,212,.08)', borderRadius: 999, padding: '7px 14px', textAlign: 'left' }}>
-        <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 700, fontFamily: 'monospace', textAlign: 'left' }}>PROFILE: LIVE</span>
-      </div>
-      <span style={{ color: '#A6ADBB', fontSize: 12, fontFamily: 'monospace', letterSpacing: 1 }}>// GITHUB PROFILE</span>
+
+  <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+    <span style={{ color: '#F59E0B', fontSize: 12, fontWeight: 800, fontFamily: 'monospace', letterSpacing: 2.2 }}>MARVRCH / PROFILE</span>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8, border: '1px solid rgba(34,211,238,.28)', borderRadius: 999, background: 'rgba(15,23,42,.58)', padding: '7px 12px' }}>
+      <span id="signal" style={{ width: 7, height: 7, borderRadius: 999, background: '#22D3EE' }} />
+      <span style={{ color: '#CBD5E1', fontSize: 11, fontFamily: 'monospace', letterSpacing: 1 }}>JAKARTA, INDONESIA</span>
     </div>
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <span style={{ color: '#F4F4F5', fontSize: 54, fontWeight: 800, lineHeight: 1.03, letterSpacing: -.8 }}>Hi, I'm Marvin Chandiary</span>
-      <span style={{ marginTop: 14, color: '#A6ADBB', fontSize: 22, lineHeight: 1.35 }}>Information Systems Student · Data Analytics &amp; BI Enthusiast</span>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 9, marginTop: 25, border: '1px solid rgba(245,166,35,.28)', background: 'rgba(21,23,29,.72)', borderRadius: 8, padding: '13px 15px', width: 536 }}>
-        <span style={{ color: '#F5A623', fontSize: 17, fontFamily: 'monospace' }}>&gt;</span>
-        <span style={{ color: '#5EEAD4', fontSize: 14, fontFamily: 'monospace' }}>Always learning new things</span>
-        <span style={{ width: 8, height: 18, background: '#5EEAD4' }} />
-      </div>
-    </div>
+  </div>
+
+  <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', width: 610 }}>
+    <span style={{ color: '#F8FAFC', fontSize: 50, fontWeight: 800, lineHeight: 1.04, letterSpacing: -1.4 }}>Marvin Chandiary</span>
+    <span style={{ color: '#22D3EE', fontSize: 18, fontWeight: 700, marginTop: 12 }}>Data Analytics &amp; Business Intelligence</span>
+    <span style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.55, marginTop: 12, maxWidth: 570 }}>Turning raw data into reliable datasets, clear analysis, and decision-ready dashboards.</span>
+  </div>
+
+  <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 9 }}>
+    {['SQL + PYTHON', 'BUSINESS INTELLIGENCE', 'LEARNING DATA ENGINEERING'].map(function(item, index) {
+      return <span key={item} style={{ color: index === 2 ? '#F59E0B' : '#CBD5E1', border: '1px solid rgba(148,163,184,.22)', borderRadius: 7, background: 'rgba(15,23,42,.72)', padding: '7px 10px', fontSize: 10, fontWeight: 700, fontFamily: 'monospace', letterSpacing: .7 }}>{item}</span>;
+    })}
   </div>
 </div>
 ```
 
-<p align="center"> <img src="https://komarev.com/ghpvc/?username=marvrch&label=Profile%20views&color=f5a623&style=flat" alt="marvrch"> </p>
+<p align="center">
+  <a href="https://www.datascienceportfol.io/marvinchandiary"><img src="https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=googlechrome&logoColor=22D3EE" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/marvinchandiary"><img src="https://img.shields.io/badge/LinkedIn-0F172A?style=for-the-badge&logo=linkedin&logoColor=22D3EE" alt="LinkedIn" /></a>
+  <a href="mailto:marvinchandiary@gmail.com"><img src="https://img.shields.io/badge/Email-0F172A?style=for-the-badge&logo=gmail&logoColor=F59E0B" alt="Email" /></a>
+  <a href="https://drive.google.com/file/d/1lQHH1OpiArFIfbbTV92y0YXVZJhw-1rv/view?usp=sharing"><img src="https://img.shields.io/badge/Resume-0F172A?style=for-the-badge&logo=readme&logoColor=F59E0B" alt="Resume" /></a>
+</p>
 
-```aura width=860 height=178
-<div style={{ position: 'relative', display: 'flex', width: '100%', height: '100%', overflow: 'hidden', borderRadius: 14, background: '#15171D', border: '1px solid #2D313B', fontFamily: 'Inter, sans-serif' }}>
-  <svg width="860" height="178" style={{ position: 'absolute', inset: 0 }}>
-    <defs>
-      <pattern id="aboutGrid" width="36" height="36" patternUnits="userSpaceOnUse">
-        <path d="M 36 0 L 0 0 0 36" fill="none" stroke="rgba(45,49,59,.55)" strokeWidth="1" />
-      </pattern>
-      <radialGradient id="aboutAmber" cx="5%" cy="0%" r="70%">
-        <stop offset="0%" stopColor="rgba(245,166,35,.18)" />
-        <stop offset="100%" stopColor="rgba(245,166,35,0)" />
-      </radialGradient>
-      <radialGradient id="aboutMint" cx="94%" cy="100%" r="62%">
-        <stop offset="0%" stopColor="rgba(94,234,212,.13)" />
-        <stop offset="100%" stopColor="rgba(94,234,212,0)" />
-      </radialGradient>
-    </defs>
-    <rect width="860" height="178" fill="url(#aboutGrid)" opacity=".68" />
-    <rect width="860" height="178" fill="url(#aboutAmber)" />
-    <rect width="860" height="178" fill="url(#aboutMint)" />
-  </svg>
-  <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '24px 36px' }}>
-    <span style={{ color: '#F5A623', fontSize: 11, fontFamily: 'monospace', letterSpacing: 2.4, textTransform: 'uppercase', marginBottom: 12 }}>// about me</span>
-    <span style={{ color: '#F4F4F5', fontSize: 17, lineHeight: 1.5, maxWidth: 790 }}>I'm an Information Systems student at BINUS University, passionate about turning data into insights. I focus on Data Analytics and Business Intelligence, and I love exploring tools that help make better, data-driven decisions. Outside of class, I build projects, learn new tech, and grow teamwork and leadership through organizational activities. Lifelong learner, always curious.</span>
-  </div>
-</div>
-```
+<p align="center"><sub>Information Systems student at BINUS University · Building at the intersection of data, systems, and business decisions</sub></p>
 
-```aura width=860 height=78
-<div style={{ display: 'flex', alignItems: 'center', width: '100%', height: '100%', borderRadius: 12, background: '#0A0B0E', border: '1px solid #2D313B', fontFamily: 'Inter, sans-serif', padding: '0 24px' }}>
-  <span style={{ color: '#F5A623', fontSize: 13, fontFamily: 'monospace', letterSpacing: 2.2, marginRight: 14 }}>// 01</span>
-  <span style={{ color: '#F4F4F5', fontSize: 28, fontWeight: 800 }}>🔥 Streak Stats</span>
-  <div style={{ flex: 1, height: 1, background: 'rgba(94,234,212,.28)', marginLeft: 22 }} />
-</div>
-```
+## About
 
-<p align="center"><img src="https://github-readme-streak-stats.herokuapp.com/?user=marvrch&theme=algolia" alt="marvrch"></p>
+I enjoy the part of data work where technical detail meets business context: defining useful metrics, cleaning imperfect data, finding the signal, and communicating it clearly. My foundation is in **analytics and BI**, and I am currently expanding toward **data engineering** to build more reliable end-to-end data workflows.
 
-```aura width=860 height=78
-<div style={{ display: 'flex', alignItems: 'center', width: '100%', height: '100%', borderRadius: 12, background: '#0A0B0E', border: '1px solid #2D313B', fontFamily: 'Inter, sans-serif', padding: '0 24px' }}>
-  <span style={{ color: '#F5A623', fontSize: 13, fontFamily: 'monospace', letterSpacing: 2.2, marginRight: 14 }}>// 02</span>
-  <span style={{ color: '#F4F4F5', fontSize: 28, fontWeight: 800 }}>My Skills</span>
-  <div style={{ flex: 1, height: 1, background: 'rgba(94,234,212,.28)', marginLeft: 22 }} />
-</div>
-```
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <strong>01 · Analyze</strong><br><br>
+      <sub>Explore data, define KPIs, and turn business questions into measurable insights.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <strong>02 · Communicate</strong><br><br>
+      <sub>Build focused dashboards and explain findings in language stakeholders can act on.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <strong>03 · Engineer</strong><br><br>
+      <sub>Develop stronger pipelines, modeling habits, and dependable data foundations.</sub>
+    </td>
+  </tr>
+</table>
 
-```aura width=860 height=660
-<div style={{ display: 'flex', flexDirection: 'column', gap: 22, width: '100%', height: '100%', background: '#0A0B0E', fontFamily: 'Inter, sans-serif', padding: '8px 8px 8px 34px' }}>
-  {[
-    {
-      number: '01',
-      title: 'Foundation / Core Stack',
-      label: 'Core',
-      summary: 'Technical and analytical foundation for practical data work.',
-      blocks: [
-        { title: 'SQL, BigQuery, Python', summary: 'Querying, modeling, scripting, cleaning, and repeatable data preparation.', items: ['SQL', 'BigQuery', 'Python'] },
-        { title: 'Data Analytics Foundation', summary: 'KPI thinking, dashboard interpretation, business questions, and stakeholder-ready reporting.', items: ['BI', 'Dashboards', 'KPI Design'] },
-      ],
-      footer: ['SQL', 'BigQuery', 'Python', 'BI Analytics'],
-    },
-    {
-      number: '02',
-      title: 'Applied BI Experience',
-      label: 'Experience',
-      summary: 'Hands-on reporting and insight work from projects and internship-style business contexts.',
-      blocks: [
-        { title: 'Business Intelligence & Dashboard Building', summary: 'Turning questions into useful views, metrics, and visual reporting flows.', items: ['Dashboards', 'Reporting', 'Metrics'] },
-        { title: 'Business Context & Insight Communication', summary: 'Reading operational data, explaining patterns, and supporting decisions clearly.', items: ['Analysis', 'Storytelling', 'Stakeholders'] },
-      ],
-      footer: ['Dashboarding', 'Reporting', 'KPI Tracking', 'Insight Communication'],
-    },
-  ].map(function(section) {
-    return (
-      <div key={section.number} style={{ position: 'relative', display: 'flex', minHeight: 232, paddingLeft: 26 }}>
-        <div style={{ position: 'absolute', left: 0, top: -8, bottom: -14, width: 1, background: 'rgba(45,49,59,.85)' }} />
-        <div style={{ position: 'absolute', left: -4, top: 36, width: 9, height: 9, borderRadius: 999, background: '#F5A623' }} />
-        <div style={{ display: 'flex', flexDirection: 'column', width: '100%', borderRadius: 12, background: '#0D1116', border: '1px solid rgba(245,166,35,.48)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.04)', padding: 20 }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{ color: '#F4F4F5', fontSize: 19, fontWeight: 800 }}>{section.title}</span>
-              <span style={{ color: '#A6ADBB', fontSize: 13, marginTop: 9 }}>{section.summary}</span>
-            </div>
-            <span style={{ color: '#5EEAD4', fontSize: 12, fontWeight: 800, fontFamily: 'monospace' }}>{section.label}</span>
-          </div>
-          <div style={{ display: 'flex', gap: 12 }}>
-            {section.blocks.map(function(block, index) {
-              return (
-                <div key={block.title} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: 370, minHeight: 116, borderRadius: 10, background: 'rgba(10,11,14,.72)', border: '1px solid rgba(45,49,59,.95)', padding: '15px 16px' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span style={{ color: '#A6ADBB', fontSize: 11, fontFamily: 'monospace', letterSpacing: 1.2 }}>{section.number + String.fromCharCode(65 + index)}</span>
-                    <span style={{ color: '#F4F4F5', fontSize: 15, fontWeight: 800, marginTop: 8 }}>{block.title}</span>
-                    <span style={{ color: '#A6ADBB', fontSize: 13, lineHeight: 1.45, marginTop: 9 }}>{block.summary}</span>
-                  </div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginTop: 14 }}>
-                    {block.items.map(function(item) {
-                      return <span key={item} style={{ color: '#D8DCE3', background: 'rgba(10,11,14,.6)', border: '1px solid rgba(94,234,212,.23)', borderRadius: 7, padding: '5px 9px', fontSize: 11, fontFamily: 'monospace' }}>{item}</span>;
-                    })}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div style={{ display: 'flex', gap: 7, marginTop: 14 }}>
-            {section.footer.map(function(item) {
-              return <span key={item} style={{ color: '#A6ADBB', background: 'rgba(10,11,14,.55)', border: '1px solid rgba(45,49,59,.95)', borderRadius: 7, padding: '5px 9px', fontSize: 11, fontFamily: 'monospace' }}>{item}</span>;
-            })}
-          </div>
-        </div>
-      </div>
-    );
-  })}
-</div>
-```
+## Toolbox
 
-```aura width=860 height=78
-<div style={{ display: 'flex', alignItems: 'center', width: '100%', height: '100%', borderRadius: 12, background: '#0A0B0E', border: '1px solid #2D313B', fontFamily: 'Inter, sans-serif', padding: '0 24px' }}>
-  <span style={{ color: '#F5A623', fontSize: 13, fontFamily: 'monospace', letterSpacing: 2.2, marginRight: 14 }}>// 03</span>
-  <span style={{ color: '#F4F4F5', fontSize: 28, fontWeight: 800 }}>📊 GitHub Stats (Expand to View)</span>
-  <div style={{ flex: 1, height: 1, background: 'rgba(94,234,212,.28)', marginLeft: 22 }} />
-</div>
-```
+<p>
+  <img src="https://img.shields.io/badge/Python-111827?style=flat-square&logo=python&logoColor=F59E0B" alt="Python" />
+  <img src="https://img.shields.io/badge/SQL-111827?style=flat-square&logoColor=22D3EE" alt="SQL" />
+  <img src="https://img.shields.io/badge/BigQuery-111827?style=flat-square&logo=googlebigquery&logoColor=22D3EE" alt="BigQuery" />
+  <img src="https://img.shields.io/badge/Pandas-111827?style=flat-square&logo=pandas&logoColor=F8FAFC" alt="Pandas" />
+  <img src="https://img.shields.io/badge/NumPy-111827?style=flat-square&logo=numpy&logoColor=22D3EE" alt="NumPy" />
+  <img src="https://img.shields.io/badge/Power_BI-111827?style=flat-square&logo=powerbi&logoColor=F59E0B" alt="Power BI" />
+  <img src="https://img.shields.io/badge/Looker_Studio-111827?style=flat-square&logo=looker&logoColor=22D3EE" alt="Looker Studio" />
+  <img src="https://img.shields.io/badge/Streamlit-111827?style=flat-square&logo=streamlit&logoColor=F59E0B" alt="Streamlit" />
+  <img src="https://img.shields.io/badge/Git-111827?style=flat-square&logo=git&logoColor=F59E0B" alt="Git" />
+</p>
+
+## Selected work
+
+| Project | What it demonstrates | Stack |
+| :--- | :--- | :--- |
+| **[Kimia Farma Performance Analytics](https://github.com/marvrch/Kimia-Farma-Performance-Analytics)** | Business performance analysis from 2020–2023, translated into an interactive decision-support dashboard. | `BigQuery` `Looker Studio` |
+| **[SaleCraft Data Wrangling](https://github.com/marvrch/SaleCraft_DataWrangling)** | Auditable cleaning, data-quality checks, and feature preparation from messy retail invoices. | `Python` `Pandas` `NumPy` |
+| **[Retail Sales & Customer Analysis](https://github.com/marvrch/Retail-Business-Sales-Customer-Analysis)** | KPI design and RFM segmentation used to surface retention and sales opportunities. | `SQL Server` `Power BI` |
+| **[Smartphone Price Prediction](https://github.com/marvrch/Smartphone-Price-Prediction)** | Leak-safe regression workflow with a tuned SVR model and a deployed prediction app. | `scikit-learn` `Streamlit` |
+
+> **Now:** strengthening my data engineering fundamentals through the [Data Engineering Zoomcamp](https://github.com/marvrch/data-engineering-zoomcamp), with an emphasis on reproducible workflows and solid foundations.
+
+## GitHub pulse
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=marvrch&bg_color=0B0F14&color=94A3B8&line=22D3EE&point=F59E0B&area=true&hide_border=true" alt="Marvin's GitHub contribution graph" />
+</p>
 
 <details>
-  <summary><b>💻 GitHub Profile Stats</b></summary>
+  <summary><strong>More GitHub statistics</strong></summary>
   <br>
   <p align="center">
-    <a href="https://github.com/stats-organization/github-stats-extended"><img alt="Marvin's Github Stats" src="https://github-stats-extended.vercel.app/api?username=marvrch&show_icons=true&count_private=true&title_color=f5a623&text_color=d8dce3&icon_color=5eead4&bg_color=0a0b0e&border_color=2d313b&border_radius=8" height="192px"></a>
-    <br><br>
-    <img src="https://github-stats-extended.vercel.app/api/top-langs?username=marvrch&show_icons=true&locale=en&layout=compact&langs_count=8&title_color=f5a623&text_color=d8dce3&icon_color=5eead4&bg_color=0a0b0e&border_color=2d313b&border_radius=8" alt="Most used languages" height="192px">
-    <br>
-    <b>Note:</b> Top languages is a metric of the languages in my public repos and doesn't reflect experience or skill level.
+    <a href="https://github.com/stats-organization/github-stats-extended"><img height="180" src="https://github-stats-extended.vercel.app/api?username=marvrch&show_icons=true&count_private=true&title_color=22D3EE&text_color=94A3B8&icon_color=F59E0B&bg_color=0B0F14&border_color=243447&border_radius=8" alt="Marvin's GitHub statistics" /></a>
+    <img height="180" src="https://github-stats-extended.vercel.app/api/top-langs?username=marvrch&layout=compact&langs_count=8&title_color=22D3EE&text_color=94A3B8&icon_color=F59E0B&bg_color=0B0F14&border_color=243447&border_radius=8" alt="Most used languages" />
   </p>
+  <p align="center"><sub>Language statistics reflect public repository code, not proficiency.</sub></p>
 </details>
-
-<details>
-  <summary><b>⚡ Recent GitHub Activity</b></summary>
-  <br>
-  <a href="https://github.com/marvrch"><img alt="Marvin's Activity Graph" src="https://github-readme-activity-graph.vercel.app/graph?username=marvrch&custom_title=Marvin%27s%20Contribution%20Graph&theme=react-dark&hide_border=true"></a>
-  <br>
-</details>
-
-```aura width=860 height=78
-<div style={{ display: 'flex', alignItems: 'center', width: '100%', height: '100%', borderRadius: 12, background: '#0A0B0E', border: '1px solid #2D313B', fontFamily: 'Inter, sans-serif', padding: '0 24px' }}>
-  <span style={{ color: '#F5A623', fontSize: 13, fontFamily: 'monospace', letterSpacing: 2.2, marginRight: 14 }}>// 04</span>
-  <span style={{ color: '#F4F4F5', fontSize: 28, fontWeight: 800 }}>🙋‍♂️ Let’s Connect</span>
-  <div style={{ flex: 1, height: 1, background: 'rgba(94,234,212,.28)', marginLeft: 22 }} />
-</div>
-```
-
-```aura width=126 height=44 link="mailto:marvinchandiary@gmail.com" inline align=center
-<SocialMediaButton icon="https://img.icons8.com/bubbles/50/000000/gmail.png" text="Email" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={126} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
-```
-```aura width=144 height=44 link="https://www.linkedin.com/in/marvinchandiary" inline align=center
-<SocialMediaButton icon="https://img.icons8.com/bubbles/50/000000/linkedin.png" text="LinkedIn" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={144} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
-```
-```aura width=132 height=44 link="https://drive.google.com/file/d/1lQHH1OpiArFIfbbTV92y0YXVZJhw-1rv/view?usp=sharing" inline align=center
-<SocialMediaButton icon="https://img.icons8.com/bubbles/50/000000/resume.png" text="Resume" backgroundColor="#15171D" textColor="#F4F4F5" borderColor="#2D313B" width={132} height={44} gradientStops={[{ offset: '0%', color: '#F5A623' }, { offset: '50%', color: '#5EEAD4' }, { offset: '100%', color: '#F5A623' }]} />
-```
 
 ---
 
-<ul>
-  <li>Credit: Design inspired by <a href="https://github.com/collectioneur/readme-aura">collectioneur/readme-aura</a> and <a href="https://github.com/formidablae/formidablae">formidablae/formidablae</a>; template and stats parts adapted from <a href="https://github.com/DenverCoder1">DenverCoder1</a>, <a href="https://github.com/anuraghazra">anuraghazra</a>, and <a href="https://github.com/stats-organization/github-stats-extended">stats-organization/github-stats-extended</a></li>
-  <li>Last Edited on: 05/07/2026</li>
-</ul>
-
-<!-- Quick blurb for visitors -->
-
 <p align="center">
-  🌱 Currently learning <b>Data Engineering</b> • 📫 Reach me at <b>marvinchandiary@gmail.com</b>
+  <sub>Build clearly · Measure honestly · Keep learning</sub><br>
+  <sub>Header rendered with <a href="https://github.com/collectioneur/readme-aura">readme-aura</a>.</sub>
 </p>
